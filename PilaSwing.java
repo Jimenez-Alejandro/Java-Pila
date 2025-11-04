@@ -102,12 +102,12 @@ class PantallaPila extends JFrame {
 
         JButton btnInsertar = new JButton("Insertar");
         JButton btnEliminar = new JButton("Eliminar");
-        JButton btnMostrar = new JButton("Mostrar");
+        //JButton btnMostrar = new JButton("Mostrar");
         JButton btnRegresar = new JButton("Regresar");
 
         panelBotones.add(btnInsertar);
         panelBotones.add(btnEliminar);
-        panelBotones.add(btnMostrar);
+        //panelBotones.add(btnMostrar);
         panelBotones.add(btnRegresar);
 
         add(panelBotones, BorderLayout.SOUTH);
@@ -115,7 +115,7 @@ class PantallaPila extends JFrame {
         // --- Acciones de botones ---
         btnInsertar.addActionListener(e -> insertar());
         btnEliminar.addActionListener(e -> eliminar());
-        btnMostrar.addActionListener(e -> mostrar());
+        //btnMostrar.addActionListener(e -> mostrar());
         btnRegresar.addActionListener(e -> {
             dispose();
             new PantallaInicial();
@@ -144,6 +144,8 @@ class PantallaPila extends JFrame {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Entrada inválida, debe ser un número entero", "Error", JOptionPane.ERROR_MESSAGE);
         }
+
+        mostrar();
     }
 
     private void eliminar() {
@@ -153,6 +155,8 @@ class PantallaPila extends JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Se eliminó el número: " + eliminado);
         }
+
+        mostrar();
     }
 
     private void mostrar() {
